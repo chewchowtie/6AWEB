@@ -1,0 +1,26 @@
+.cv-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background: linear-gradient(90deg, #ffe6f0, #fff0f6);
+  border-top: 2px solid #ff80ab;
+  border-radius: 0 0 12px 12px;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ff4da6;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #c2185b;
+  text-decoration: underline;
+}
