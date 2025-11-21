@@ -1,0 +1,71 @@
+/* Header Styles */
+.cv-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #d63384; /* vibrant pink */
+}
+
+.contact-info {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-item strong {
+  font-weight: 600;
+  color: #d63384;
+}
+
+.contact-item a {
+  color: #ff4da6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #c2185b;
+  text-decoration: underline;
+}
+
+.separator {
+  color: #999;
+  margin: 0 5px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ff80ab, transparent);
+  margin-top: 20px;
+}
+
+/* Content Styles */
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #d63384;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ff80ab;
+  text-transform: uppercase;
+}
+
+/* Profile Section */
+.profile-text {
+  font-size: 1rem;
+  color: #444;
+  text-align: justify;
+  line-height: 1.8;
+}
