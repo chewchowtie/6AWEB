@@ -1,0 +1,97 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  background: #fff0f6; /* pastel pink background */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(255, 182, 193, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-column:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(255, 128, 171, 0.3);
+}
+
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  background: #ffe6f0;
+  border-radius: 20px;
+  padding: 8px 12px 8px 35px;
+  transition: background 0.3s ease;
+}
+
+.skills-list li:hover {
+  background: #ffd6e8;
+}
+
+/* Cute icon bullets */
+.skills-list li::before {
+  content: "♡"; /* heart icon */
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff4da6;
+  font-size: 1.2rem;
+}
+
+/* Section Title */
+.skills-section .section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #d63384;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px dashed #ff80ab; /* playful dashed underline */
+  text-transform: uppercase;
+}
+
+
+/* Technical Skills Section */
+.technical-skills .section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #d63384;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px dashed #ff80ab; /* playful dashed underline */
+  text-transform: uppercase;
+}
+
+.tech-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 128, 171, 0.25);
+}
+
+.category-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #d63384;
+  margin-bottom: 8px;
+}
+
+.tech-items {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
