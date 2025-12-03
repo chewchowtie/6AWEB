@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Explained</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#">Examples</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero my-4">
+    <h1>What is Bootstrap?</h1>
+    <p>Bootstrap is a free, open-source front-end framework for building responsive, mobile-first websites quickly.</p>
+    <a href="#" class="btn btn-pink btn-lg">Learn More</a>
+  </section>
+
+  <!-- Content Section -->
+  <section class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h3>Responsive Grid</h3>
+          <p>Bootstrap uses a 12-column grid system that adapts layouts to any screen size, making sites mobile-friendly by default.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h3>Pre-built Components</h3>
+          <p>It comes with styled buttons, navbars, forms, modals, and more — ready to use and easy to customize.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h3>Utility Classes</h3>
+          <p>Quick helpers like <code>.text-center</code>, <code>.p-3</code>, and <code>.bg-light</code> let you style elements instantly without writing extra CSS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra Section -->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col">
+        <div class="card p-4">
+          <h3>Why Use Bootstrap?</h3>
+          <ul>
+            <li>Saves development time with ready-to-use components.</li>
+            <li>Ensures consistency across browsers and devices.</li>
+            <li>Mobile-first design philosophy built in.</li>
+            <li>Large community and extensive documentation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Meg Esguerra | WD-302. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
