@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tailwind Explained</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-100 font-sans text-gray-700">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-pink-300 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-white font-bold text-lg">Tailwind</a>
+      <div class="space-x-4">
+        <a href="#" class="text-white hover:text-pink-50">Home</a>
+        <a href="#" class="text-white hover:text-pink-50">Features</a>
+        <a href="#" class="text-white hover:text-pink-50">Examples</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-pink-200 text-center py-16 rounded-lg m-6">
+    <h1 class="text-4xl font-bold text-pink-700">What is Tailwind CSS?</h1>
+    <p class="mt-4 text-lg">Tailwind is a utility-first CSS framework that lets you style directly in your HTML using pre-defined classes.</p>
+    <a href="#" class="mt-6 inline-block bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600">Learn More</a>
+  </section>
+
+  <!-- Content Section -->
+  <section class="container mx-auto my-10 px-6">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-pink-50 shadow-md rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-pink-700">Utility Classes</h3>
+        <p class="mt-2">Tailwind provides small, reusable classes like <code>p-4</code>, <code>text-center</code>, and <code>bg-pink-200</code> to style elements quickly.</p>
+      </div>
+      <div class="bg-pink-50 shadow-md rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-pink-700">Customization</h3>
+        <p class="mt-2">You can configure colors, spacing, and fonts in Tailwind’s config file, making it highly customizable.</p>
+      </div>
+      <div class="bg-pink-50 shadow-md rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-pink-700">Responsive Design</h3>
+        <p class="mt-2">Tailwind uses responsive prefixes like <code>md:</code> or <code>lg:</code> so layouts adapt to different screen sizes easily.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra Section -->
+  <section class="container mx-auto my-10 px-6">
+    <div class="bg-pink-50 shadow-md rounded-lg p-6">
+      <h3 class="text-2xl font-bold text-pink-700">Why Use Tailwind?</h3>
+      <ul class="list-disc list-inside mt-3 space-y-2">
+        <li>Speeds up development with ready-to-use utility classes.</li>
+        <li>Encourages consistency without writing custom CSS for every element.</li>
+        <li>Responsive and mobile-first by design.</li>
+        <li>Highly customizable with configuration and plugins.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-pink-300 text-white text-center py-4 mt-10">
+    <p>&copy; Meg Esguerra | WD-302. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
