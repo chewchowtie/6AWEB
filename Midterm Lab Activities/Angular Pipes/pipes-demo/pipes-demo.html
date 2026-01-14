@@ -1,0 +1,125 @@
+<style>
+  :host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff5f7;
+  padding: 40px;
+  color: #4a4a4a;
+}
+
+h3 {
+  color: #d81b60;
+  border-bottom: 2px solid #f8bbd0;
+  padding-bottom: 8px;
+  margin-top: 30px;
+}
+
+
+div {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(216, 27, 96, 0.05);
+  border: 1px solid #fce4ec;
+}
+
+
+p, div {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+pre {
+  background-color: #fce4ec;
+  padding: 15px;
+  border-radius: 8px;
+  color: #ad1457;
+  overflow-x: auto;
+}
+
+
+p:first-of-type {
+  font-weight: bold;
+  color: #ad1457;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+h3, h4, h5, h6 {
+  margin: 10px 0;
+  font-weight: 500;
+}
+</style>
+
+<p>pipes-demo works!</p>
+<p>Made by: Esguerra, Arianne Meg P.</p>
+
+<h3>Date Formats</h3>
+<div>
+  Today's date :- {{presentDate}}
+</div>
+
+<h3>Date Pipe</h3>
+<div>
+   Today's date :- {{presentDate | date }}
+</div>
+
+<h3>Parameters in Date</h3>
+<div>
+  This is a short date :- {{presentDate | date:'shortDate'}} <br />
+  This line shows a full date :- {{presentDate | date:'fullDate' }} <br />
+  This will show a formatted date :- {{presentDate | date: 'M/dd/yyyy'}} <br />
+  This indicates the hours and minutes :- {{presentDate | date: 'h:mm'}}
+</div>
+
+<h3>Chained Pipes</h3>
+<div>
+  Date with uppercase: {{presentDate | date:'fullDate' | uppercase}} <br />
+  Date with lowercase: {{presentDate | date:'medium' | lowercase }} <br />
+</div>
+
+<h3>Async Pipes</h3>
+<div>
+  Seconds changing in Time: {{ time$ | async | date:'mediumTime'}}
+</div>
+
+<h3>Currency Pipes</h3>
+<div>
+<p>{{price | currency: '':true}}</p>
+<p>{{ price | currency: 'INR' }}</p>
+</div>
+
+<h3>Slice Pipe</h3>
+<div>
+  <h3>Start index:- {{Fruits | slice:2}}</h3>
+  <h4>Start and end index:- {{Fruits | slice:1:4}}</h4>
+  <h5>Negative index:- {{Fruits | slice:-2}}</h5>
+  <h6>Negative start and end index:- {{Fruits | slice:-4:-2}}</h6>
+</div>
+
+<h3>Decimal Pipes</h3>
+<div style="text-align:center">
+  <p>Apply formatting:- {{decimalNum1 | number:'3.1'}}</p>
+  <p>Apply formatting:- {{decimalNum1 | number:'2.1-4'}}</p>
+</div>
+
+<h3>JSON Pipes</h3>
+<div>
+<p>Identification:</p>
+<pre>{{ identification | json }}</pre>
+</div>
+
+<h3>Percent Pipes</h3>
+<div>
+  <p>Standard: {{numA | percent }}</p>
+  <p>With decimals: {{ numC | percent:'1.2-2'}}</p>
+</div>
+
+<h3>Title Case Pipes</h3>
+<div>
+  <p>Original: {{ message }}</p>
+  <p>Formatted: {{message | titlecase }}</p>
+</div>
