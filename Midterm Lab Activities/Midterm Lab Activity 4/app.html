@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Employees List</h2>
+  <table class="minimal-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees; track employee.id) {
+        <tr>
+          <td>{{employee.id}}</td>
+          <td>{{employee.firstname}}</td>
+          <td>{{employee.lastname}}</td>
+          <td class="email-cell">{{employee.email}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <h2>Products List</h2>
+  <table class="minimal-table">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th class="text-right">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products; track product.productid) {
+        <tr>
+          <td class="id-cell">{{product.productid}}</td>
+          <td>{{product.productname}}</td>
+          <td class="description-cell">{{product.description}}</td>
+          <td class="text-right price-cell">{{product.price}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<router-outlet />
