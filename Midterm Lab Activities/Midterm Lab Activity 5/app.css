@@ -1,0 +1,42 @@
+/* Typography and Title */
+.table-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Table Structure */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+/* Table Cell Borders and Padding */
+.user-table th,
+.user-table td {
+  border: 1px solid #d3d3d3; /* Light gray border */
+  padding: 12px 15px;       /* Spacing inside cells */
+  text-align: left;
+}
+
+/* Header Styling */
+.user-table th {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Row Content Styling */
+.user-table td {
+  color: #555;
+}
+
+/* Figure Caption at the Bottom */
+.figure-caption {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
