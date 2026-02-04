@@ -1,0 +1,20 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<nav class="navbar">
+  <div class="navbar-brand">
+    Community Help Desk
+  </div>
+
+  <div class="navbar-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/services" routerLinkActive="active">Services</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
