@@ -1,0 +1,12 @@
+<div class="welcome-container">
+  <h1>Welcome!</h1>
+  <p>This portal pulls remote records and shares them across pages.</p>
+
+  <h2>Latest Updates</h2>
+  <ul>
+    <li *ngFor="let post of httpposts | slice:-5">
+      <strong>{{post.title}}</strong>
+      <p>{{post.body}}</p>
+    </li>
+  </ul>
+</div>

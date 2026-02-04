@@ -1,0 +1,93 @@
+/* Container: The "Walnut Console" */
+.about-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #f4ece1; /* Aged parchment */
+  background-image:
+    repeating-radial-gradient(circle at 0 0, transparent 0, #f4ece1 40px),
+    linear-gradient(to bottom, rgba(139, 69, 19, 0.05) 1px, transparent 1px); /* Subtle paper grain/lines */
+  background-size: 100% 3px;
+  border: 12px solid #3d2b1f; /* Dark wood frame */
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 50px rgba(0,0,0,0.1),
+    15px 15px 0px #bc8f8f; /* Dusty rose offset shadow */
+  font-family: 'Georgia', serif;
+  color: #4a3728;
+  line-height: 1.8;
+  position: relative;
+}
+
+/* Heading: The "Typewriter" look */
+.about-container h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-align: center;
+  color: #2e1a0b;
+  text-transform: uppercase;
+  border-bottom: 2px solid #3d2b1f;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+/* Paragraphs: The "Ink on Paper" look */
+.about-container p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  position: relative;
+  /* Subtle "ink bleed" effect */
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.2);
+}
+
+/* Last Paragraph: The "Stamping" effect */
+.about-container p:last-child {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #8b4513;
+  text-transform: uppercase;
+  border: 3px double #8b4513;
+  display: inline-block;
+  padding: 5px 15px;
+  margin-top: 20px;
+  transform: rotate(-3deg); /* Look like a physical stamp */
+  opacity: 0.8;
+}
+
+/* --- VINTAGE ANIMATIONS --- */
+
+/* 1. Dust Motes: Floating particles over the screen */
+.about-container::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.3;
+  pointer-events: none;
+  animation: dust-float 10s linear infinite;
+}
+
+@keyframes dust-float {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* 2. Projector Flicker: Subtle light shifts */
+@keyframes film-flicker {
+  0%, 100% { background-color: #f4ece1; }
+  50% { background-color: #efe6d8; }
+  70% { background-color: #f7f0e8; }
+}
+
+.about-container {
+  animation: film-flicker 0.2s infinite;
+}
+
+/* 3. Hover Effect: The "Magnifying Glass" */
+.about-container p:hover {
+  color: #000;
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}

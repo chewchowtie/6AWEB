@@ -1,0 +1,121 @@
+/* Container: The "Mainframe Terminal" */
+.services-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 35px 40px;
+  background: #e5dcc3; /* Classic "beige box" computer plastic */
+  border: 4px solid #3d2b1f;
+  border-radius: 8px;
+  box-shadow:
+    10px 10px 0px #3d2b1f, /* Hard offset shadow */
+    inset -5px -5px 15px rgba(0,0,0,0.1); /* Subtle plastic curvature */
+  font-family: 'Courier New', Courier, monospace;
+  color: #2e1a0b;
+  position: relative;
+}
+
+/* Heading: The "Computer Screen" Look */
+.services-container h1 {
+  font-size: 2em;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #2a1b0a; /* Dark amber screen */
+  color: #ffb300; /* Amber phosphor */
+  padding: 15px;
+  border-radius: 4px;
+  border: 8px solid #3d2b1f; /* Recessed bezel */
+  margin-bottom: 30px;
+  text-shadow: 0 0 8px rgba(255, 179, 0, 0.6);
+}
+
+/* Search Input: The "Keyboard Entry" */
+.services-container input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 25px;
+  border: 3px solid #3d2b1f;
+  background: #fff;
+  font-family: inherit;
+  font-weight: bold;
+  color: #2e1a0b;
+  box-shadow: inset 3px 3px 0px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.services-container input[type="text"]:focus {
+  background: #fdfae5;
+  border-color: #8b4513;
+}
+
+/* List of Services: The "Physical Index" */
+.services-container ul li {
+  background: #f4ece1; /* Cardstock color */
+  padding: 18px 25px;
+  margin-bottom: 12px;
+  border: 1px solid #dcd1c0;
+  border-bottom: 4px solid #3d2b1f; /* Mechanical button feel */
+  border-radius: 0; /* Cards are sharp */
+  transition: all 0.2s;
+  position: relative;
+}
+
+.services-container ul li:hover {
+  transform: translateY(-4px) translateX(-2px);
+  background: #fff;
+  box-shadow: 5px 5px 0px #8b4513;
+}
+
+/* Service title: The "Printed Label" */
+.services-container ul li strong {
+  font-size: 1.15em;
+  color: #8b4513;
+  text-decoration: underline;
+}
+
+/* Loading/Error Messages: "System Status" */
+.services-container p {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* --- VINTAGE "TAPE" ANIMATIONS --- */
+
+/* Loading Spinner: Spinning Magnetic Tape Reel */
+@keyframes tape-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* You can apply this to your loading indicator */
+.services-container p:contains("Loading")::before {
+  content: "⚙";
+  display: inline-block;
+  margin-right: 10px;
+  animation: tape-spin 2s linear infinite;
+}
+
+/* Global "Warm Hardware" Hum */
+@keyframes hum {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.02); }
+}
+
+.services-container {
+  animation: hum 4s ease-in-out infinite;
+}
+
+/* CRT Scanline over the 'Screen' (h1) */
+.services-container h1::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}

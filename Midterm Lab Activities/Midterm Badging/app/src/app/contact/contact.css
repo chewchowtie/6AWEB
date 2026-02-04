@@ -1,0 +1,150 @@
+/* General form container: The "Control Console" */
+.contact-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 35px 40px;
+  background-color: #f4ece1; /* Aged parchment */
+  background-image: linear-gradient(rgba(139, 69, 19, 0.05) 50%, transparent 50%);
+  background-size: 100% 4px; /* Subtle CRT/Paper scanlines */
+  border: 10px solid #3d2b1f; /* Dark walnut frame */
+  border-radius: 4px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 50px rgba(139, 69, 19, 0.1);
+  font-family: 'Georgia', serif;
+  color: #4a3728;
+  animation: warm-flicker 3s infinite;
+}
+
+/* Form heading: The "Dymo Label" look */
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+  font-family: 'Courier New', monospace;
+  background: #2e1a0b; /* Dark embossed plastic look */
+  color: #f4ece1;
+  padding: 10px;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+/* Labels */
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  color: #5d4037;
+}
+
+/* Inputs and textarea: "Bakelite" style */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 5px;
+  border-radius: 2px;
+  border: 2px solid #3d2b1f;
+  background: #fffdfa;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
+  color: #2e1a0b;
+  outline: none;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: #fff;
+  border-color: #8b4513;
+  box-shadow: 0 0 10px rgba(139, 69, 19, 0.2);
+}
+
+/* Error messages: "Warning Light" */
+.contact-form .error {
+  color: #b71c1c;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* Buttons: "Heavy Toggle" look */
+.contact-form button {
+  padding: 12px 25px;
+  margin-top: 15px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 4px solid #1a110a; /* Physical depth */
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-color: #3d2b1f;
+  color: #f4ece1;
+  transition: all 0.1s;
+}
+
+.contact-form button:hover {
+  background-color: #4e342e;
+  transform: translateY(1px);
+  border-bottom-width: 2px;
+}
+
+.contact-form button:active {
+  transform: translateY(4px);
+  border-bottom-width: 0;
+}
+
+/* Reset button: "Bakelite Ivory" */
+.contact-form button[type="button"] {
+  background-color: #d7ccc8;
+  color: #3e2723;
+  border-bottom-color: #a1887f;
+}
+
+/* Form preview: The "Amber Monitor" */
+.contact-form .preview {
+  margin-top: 30px;
+  padding: 20px;
+  background: #2a1b0a; /* Dark amber-black screen */
+  border: 4px solid #3d2b1f;
+  border-radius: 8px;
+  color: #ffb300; /* Classic Amber phosphor */
+  font-family: 'Courier New', monospace;
+  box-shadow: inset 0 0 20px #000, 0 0 10px rgba(255, 179, 0, 0.2);
+  text-shadow: 0 0 5px rgba(255, 179, 0, 0.7);
+}
+
+.contact-form .preview h3 {
+  color: #ffb300;
+  border-bottom: 1px solid #ffb300;
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+/* Animations */
+@keyframes warm-flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.98; }
+  100% { opacity: 1; }
+}
+
+@keyframes text-glow {
+  0% { text-shadow: 0 0 5px rgba(255, 179, 0, 0.7); }
+  50% { text-shadow: 0 0 12px rgba(255, 179, 0, 0.9); }
+  100% { text-shadow: 0 0 5px rgba(255, 179, 0, 0.7); }
+}
+
+.contact-form .preview {
+  animation: text-glow 2s infinite ease-in-out;
+}

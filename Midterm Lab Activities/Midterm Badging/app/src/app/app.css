@@ -1,0 +1,118 @@
+/* 1. Global Background & Texture */
+body {
+  margin: 0;
+  /* Dark Walnut to Charcoal radial gradient */
+  background: radial-gradient(circle, #4a3728 0%, #1a110a 100%);
+  background-attachment: fixed;
+  font-family: 'Georgia', serif;
+  color: #f4ece1;
+  position: relative;
+}
+
+/* Subtle Film Grain Overlay for the whole page */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 2. The "Radio Row" Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #2e1a0b; /* Dark wooden console */
+  border-bottom: 5px solid #1a110a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar Brand: The "Serial Number" plate */
+.navbar-brand {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #f4ece1;
+  background: #8b4513;
+  padding: 5px 15px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Nav Links: "Analog Push-Buttons" */
+.navbar a {
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #a1887f;
+  padding: 10px 20px;
+  margin-left: 10px;
+  background: #3d2b1f;
+  border: 1px solid #1a110a;
+  border-bottom: 4px solid #1a110a;
+  transition: all 0.1s ease;
+}
+
+.navbar a:hover {
+  color: #ffb300; /* Amber glow */
+  background: #4e342e;
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+/* Active Link: The "Pressed Button" */
+.navbar a:active, .navbar a.active {
+  background: #1a110a;
+  color: #ffb300;
+  transform: translateY(4px);
+  border-bottom-width: 0;
+  box-shadow: inset 0 0 10px #000;
+}
+
+/* 3. Global Typography Tweaks */
+:host {
+  font-family: 'Georgia', serif;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.5px;
+}
+
+/* 4. The "Old TV" Vignette Effect */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  /* Dark edges to simulate a CRT screen curvature */
+  background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* 5. Custom Scrollbar: "Mechanical Slide" */
+::-webkit-scrollbar {
+  width: 12px;
+  background: #2e1a0b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b4513;
+  border: 3px solid #2e1a0b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1887f;
+}

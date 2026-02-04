@@ -1,0 +1,41 @@
+<div class="contact-form">
+  <h2>Contact Us</h2>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <input type="text" formControlName="name" />
+      <span class="error" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+        Name is required
+      </span>
+    </label>
+    <br />
+
+    <label>
+      Email:
+      <input type="email" formControlName="email" />
+      <span class="error" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+        Enter a valid email
+      </span>
+    </label>
+    <br />
+
+    <label>
+      Message:
+      <textarea formControlName="message"></textarea>
+      <span class="error" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+        Message is required
+      </span>
+    </label>
+    <br />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="preview" *ngIf="submitted">
+    <h3>Form Preview</h3>
+    <p><strong>Name:</strong> {{ contactForm.value.name | uppercase }}</p>
+    <p><strong>Email:</strong> {{ contactForm.value.email }}</p>
+    <p><strong>Message:</strong> {{ contactForm.value.message }}</p>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="services-container">
+  <h1>Services</h1>
+
+  <input
+    type="text"
+    placeholder="Search by title or body..."
+    [formControl]="searchControl"
+  />
+
+  <div *ngIf="filteredState$ | async as state">
+    <p *ngIf="state.loading">Loading records...</p>
+    <p *ngIf="state.error" style="color:red">{{ state.error }}</p>
+    <div *ngIf="!state.loading && !state.error && state.data.length === 0">
+      No records found.
+    </div>
+
+    <ul *ngIf="!state.loading && !state.error && state.data.length > 0">
+      <li *ngFor="let post of state.data">
+        <strong>{{ post.title }}</strong>
+        <p>{{ post.body | slice:0:120 }}...</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
