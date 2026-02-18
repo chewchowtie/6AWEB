@@ -1,0 +1,52 @@
+<div class="card">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input class="input" placeholder="Username" formControlName="username" />
+    @if (isInvalid('username')) {
+      <div class="error">Username: 4-12 chars (letters/numbers/_)</div>
+    }
+
+    <input class="input" type="email" placeholder="Email" formControlName="email" />
+    @if (isInvalid('email')) {
+      <div class="error">Enter a valid email</div>
+    }
+
+    <input class="input" type="password" placeholder="Password" formControlName="password" />
+    @if (isInvalid('password')) {
+      <div class="error">Password: 8+ with upper, lower, number</div>
+    }
+
+    <select class="input" formControlName="role">
+      @for (r of roles; track r) {
+        <option [value]="r">{{ r }}</option>
+      }
+    </select>
+
+    <div class="field">
+  <label>Gender</label>
+  <div class="radio-group">
+    <label><input type="radio" value="male" formControlName="gender"> Male</label>
+    <label><input type="radio" value="female" formControlName="gender"> Female</label>
+    <label><input type="radio" value="other" formControlName="gender"> Other</label>
+  </div>
+  @if (isInvalid('gender')) {
+    <div class="error">Please select a gender</div>
+  }
+</div>
+
+<textarea class="input" placeholder="Tell us about yourself..." formControlName="bio" rows="3"></textarea>
+
+<div class="checkbox-group">
+  <label>
+    <input type="checkbox" formControlName="agreeToTerms">
+    I agree to the terms
+  </label>
+  @if (isInvalid('agreeToTerms')) {
+    <div class="error">You must accept to continue</div>
+  }
+</div>
+
+    <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+
+  </form>
+</div>

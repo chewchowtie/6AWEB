@@ -1,0 +1,116 @@
+/* Container alignment */
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(168, 182, 204, 0.15);
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto; /* Centers the card */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Consistent spacing between all elements */
+}
+
+/* Minimalist Inputs & Select */
+.input {
+  border: 1.5px solid #f1f5f9;
+  background-color: #f8fafc;
+  padding: 12px;
+  border-radius: 12px;
+  color: #64748b;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+.input:focus {
+  outline: none;
+  border-color: #cbdcf7;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(203, 220, 247, 0.2);
+}
+
+/* Error Message Styling */
+.error {
+  color: #f87171; /* Soft pastel red */
+  font-size: 0.7rem;
+  margin-top: -10px; /* Pulls error closer to its input */
+  margin-left: 5px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Pastel Submit Button */
+.btn {
+  margin-top: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background-color: #e2d5f3; /* Pastel Lavender */
+  color: #7d6b99;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #d8c8ed;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(226, 213, 243, 0.4);
+}
+
+.btn:disabled {
+  background-color: #f1f5f9;
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* Subtle animation for errors */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dynamically apply this if isInvalid returns true */
+.input.invalid-border {
+  border-color: #f87171 !important;
+  background-color: #fffefb;
+}
+
+/* Styling for the new checkbox area */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  accent-color: #e2d5f3; /* Matching our Lavender theme */
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+/* Ensure textarea looks like the other inputs */
+textarea.input {
+  resize: none; /* Keeps the minimalist shape fixed */
+  min-height: 80px;
+}
+
+/* Adjusting radio-group to fit our field labels */
+.radio-group {
+  display: flex;
+  gap: 15px;
+  padding: 5px 0;
+}
+
+.radio-group input[type="radio"] {
+  accent-color: #e2d5f3;
+}
