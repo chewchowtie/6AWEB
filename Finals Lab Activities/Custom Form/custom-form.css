@@ -1,0 +1,107 @@
+/* Shared layout from other forms */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.form-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(168, 182, 204, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.field {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Custom Interactive Elements */
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1.5px solid #f1f5f9;
+  background: #f8fafc;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.chip.selected {
+  background-color: #e2d5f3; /* Pastel Lavender */
+  border-color: #d8c8ed;
+  color: #7d6b99;
+}
+
+.star-rating {
+  font-size: 2.2rem;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.star-rating span {
+  color: #f1f5f9;
+  transition: color 0.3s ease;
+}
+
+.star-rating span.filled {
+  color: #fef08a; /* Pastel Yellow */
+}
+
+/* Standard Button Style */
+.submit-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background-color: #e2d5f3;
+  color: #7d6b99;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:disabled {
+  background-color: #f1f5f9;
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+.success-banner {
+  background-color: #d4e9e2;
+  color: #437d6a;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+}

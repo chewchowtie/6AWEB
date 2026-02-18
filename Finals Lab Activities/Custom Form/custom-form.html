@@ -1,0 +1,44 @@
+<div class="page-wrapper">
+  <div class="form-card">
+    <h2>{{ title }}</h2>
+
+    <div class="field">
+      <label>Skills Mastery</label>
+      <div class="chip-container">
+        @for (skill of availableSkills; track skill) {
+          <button
+            type="button"
+            class="chip"
+            [class.selected]="selectedSkills.includes(skill)"
+            (click)="toggleSkill(skill)">
+            {{ skill }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Experience Level</label>
+      <div class="star-rating">
+        @for (star of [1, 2, 3, 4, 5]; track star) {
+          <span
+            (click)="setRating(star)"
+            [class.filled]="star <= rating">
+            ★
+          </span>
+        }
+      </div>
+    </div>
+
+    <button
+      class="submit-button"
+      [disabled]="selectedSkills.length === 0 || rating === 0"
+      (click)="onSubmit()">
+      Save Profile
+    </button>
+
+    @if (submitted) {
+      <div class="success-banner">Profile Updated Successfully! ✨</div>
+    }
+  </div>
+</div>
