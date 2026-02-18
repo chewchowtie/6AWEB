@@ -1,0 +1,96 @@
+<div class="page-wrapper">
+  <div class="form-card">
+    <h2>{{ title }}</h2>
+
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+      <div class="field">
+        <label>Identity</label>
+        <input
+          type="text"
+          name="username"
+          [(ngModel)]="username"
+          placeholder="Username"
+          required>
+
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Email"
+          required
+          email>
+
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Password"
+          required>
+      </div>
+
+      <div class="field">
+        <label>Role & Status</label>
+        <select name="role" [(ngModel)]="role" required>
+          <option value="" disabled selected>Select a role...</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+          <option value="guest">Guest</option>
+        </select>
+
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="status" [(ngModel)]="status" value="permanent" required>
+            Permanent
+          </label>
+          <label>
+            <input type="radio" name="status" [(ngModel)]="status" value="probationary" required>
+            Probationary
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Gender</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="gender" [(ngModel)]="gender" value="male" required>
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" [(ngModel)]="gender" value="female" required>
+            Female
+          </label>
+          <label>
+            <input type="radio" name="gender" [(ngModel)]="gender" value="other" required>
+            Other
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Notes</label>
+        <textarea
+          name="comments"
+          [(ngModel)]="comments"
+          rows="3"
+          placeholder="Write a little about yourself...">
+        </textarea>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!myForm.valid"
+        class="submit-button">
+        Complete Registration
+      </button>
+
+    </form>
+
+    @if (submitted) {
+      <p style="text-align: center; color: #a8b6cc; margin-top: 15px; font-size: 0.8rem;">
+        Welcome aboard, {{ username }}!
+      </p>
+    }
+  </div>
+</div>
