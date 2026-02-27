@@ -1,0 +1,119 @@
+/* register.css */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+.sanrio-app {
+  --primary: #ff69b4;
+  --secondary: #ffb6c1;
+  --bg: #fff0f5;
+  --text: #d63384;
+  --card: #ffffff;
+  
+  font-family: 'Fredoka', sans-serif;
+  min-height: 100vh;
+  background: var(--bg);
+  transition: 0.5s;
+}
+
+.kuromi-theme {
+  --primary: #9d50bb;
+  --secondary: #6e48aa;
+  --bg: #1a002b;
+  --text: #e0b0ff;
+  --card: #2d004d;
+}
+
+/* Fix the "Squished" look with spacing */
+.main-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.glass-card {
+  background: var(--card);
+  border: 6px solid var(--secondary);
+  border-radius: 40px;
+  padding: 45px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 15px 15px 0 var(--secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Adds space between header, form, and button */
+}
+
+/* Grid Spacing */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px; /* Increased gap for better "breathing" room */
+}
+
+.full-width { grid-column: span 2; }
+
+/* Spacing for Gender/Date row */
+.selection-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+/* Loading Animation */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: #fff0f5;
+  z-index: 9999; /* Increased z-index */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Allows you to click through it if it gets stuck */
+  transition: opacity 0.5s ease;
+}
+
+.bow-animation {
+  font-size: 80px;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1) rotate(-5deg); }
+  to { transform: scale(1.2) rotate(5deg); }
+}
+
+.submit-btn {
+  height: 65px;
+  background: var(--primary) !important;
+  color: white !important;
+  border-radius: 35px !important;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.mascot {
+  width: 100px; /* Slightly smaller to fit better */
+  position: absolute;
+  top: -70px;
+  right: -20px;
+  filter: drop-shadow(5px 5px 0 var(--secondary));
+  z-index: 10;
+}
+
+.character-pivot {
+  position: relative;
+  height: 50px; /* Gives the mascot a "home" */
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr; /* Stack inputs on mobile so they aren't squished */
+  }
+  .selection-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

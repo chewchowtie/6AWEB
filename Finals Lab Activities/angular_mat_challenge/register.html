@@ -1,0 +1,64 @@
+<div class="sanrio-app" [class.kuromi-theme]="isDarkMode">
+  
+
+
+  <div class="main-container">
+    <div class="glass-card">
+      <header>
+        <div class="character-pivot">
+          <img [src]="isDarkMode ? 'https://i.pinimg.com/originals/de/8a/80/de8a80496f8c448883658f8d6894c251.png' : 'https://i.pinimg.com/originals/1d/12/36/1d1236814675713c7a0d4c88f17a9985.png'" class="mascot">
+        </div>
+        <h1>Sanrio <span>Club</span></h1>
+        <mat-slide-toggle (change)="toggleTheme()" color="warn">Switch Character</mat-slide-toggle>
+      </header>
+
+      <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <div class="form-grid">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="userName">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <input matInput type="email" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Secret Password</mat-label>
+            <input matInput type="password" formControlName="password">
+          </mat-form-field>
+        </div>
+
+        <div class="selection-row">
+          <div class="gender-picker">
+            <label>Gender Style</label>
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="male">Male</mat-radio-button>
+              <mat-radio-button value="female">Female</mat-radio-button>
+              <mat-radio-button value="other">Other</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker" [max]="maxBirthDate" formControlName="birthDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="skill-container">
+          <label>Angular Magic: {{ formdata.get('angularSkillLevel')?.value }}</label>
+          <mat-slider min="1" max="10" step="1" discrete>
+            <input matSliderThumb formControlName="angularSkillLevel">
+          </mat-slider>
+        </div>
+
+        <button mat-flat-button class="submit-btn" type="submit" [disabled]="!formdata.valid">
+          JOIN NOW
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
