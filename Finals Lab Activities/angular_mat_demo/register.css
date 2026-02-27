@@ -1,0 +1,255 @@
+/* ---------- Coffee Beige Luxe Theme ---------- */
+
+/* Page background helper if needed
+:host {
+  display: block;
+  padding: 24px;
+  background: radial-gradient(circle at top, #fbf7f2 0%, #f3ece4 55%, #efe6dd 100%);
+}
+*/
+
+.form-container {
+  max-width: 560px;
+  margin: 48px auto;
+  padding: 34px 34px 28px;
+  border-radius: 22px;
+
+  /* Soft “latte foam” gradient */
+  background: linear-gradient(180deg, #fffaf4 0%, #f6efe6 100%);
+
+  /* Glassy border + shadow */
+  border: 1px solid rgba(123, 88, 70, 0.12);
+  box-shadow:
+    0 18px 40px rgba(92, 64, 51, 0.10),
+    0 2px 10px rgba(92, 64, 51, 0.06);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cute top highlight */
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(200, 162, 122, 0.30) 0%, rgba(200, 162, 122, 0) 70%);
+  pointer-events: none;
+}
+
+/* Subtle bottom glow */
+.form-container::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  left: -140px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(75, 54, 47, 0.10) 0%, rgba(75, 54, 47, 0) 65%);
+  pointer-events: none;
+}
+
+/* Make the form feel airy */
+form {
+  display: grid;
+  gap: 16px;
+}
+
+/* Angular Material fields */
+mat-form-field {
+  width: 100%;
+}
+
+/* Rounded field wrapper + soft background */
+.mat-mdc-text-field-wrapper {
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(123, 88, 70, 0.10);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+/* Hover lift */
+.mat-mdc-text-field-wrapper:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(92, 64, 51, 0.08);
+  border-color: rgba(200, 162, 122, 0.35);
+}
+
+/* Label */
+.mat-mdc-form-field-label {
+  color: #6b4f43 !important;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* Input text */
+.mat-mdc-input-element {
+  color: #3e2a23 !important;
+  font-weight: 500;
+}
+
+/* Placeholder */
+.mat-mdc-input-element::placeholder {
+  color: rgba(107, 79, 67, 0.55);
+}
+
+/* Focus ring and outline */
+.mat-mdc-form-field.mat-focused .mat-mdc-text-field-wrapper {
+  border-color: rgba(200, 162, 122, 0.75) !important;
+  box-shadow:
+    0 14px 28px rgba(92, 64, 51, 0.10),
+    0 0 0 4px rgba(200, 162, 122, 0.20);
+  transform: translateY(-1px);
+}
+
+/* Remove harsh outline look */
+.mdc-notched-outline__leading,
+.mdc-notched-outline__notch,
+.mdc-notched-outline__trailing {
+  border-width: 0 !important;
+}
+
+/* Error */
+mat-error {
+  color: #b23b3b;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* ---------- Sections ---------- */
+
+.radio-group,
+.slider-group {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 250, 245, 0.75);
+  border: 1px dashed rgba(123, 88, 70, 0.20);
+}
+
+/* Section titles */
+.radio-label,
+.slider-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #5a3f35;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Little dot accent */
+.radio-label::before,
+.slider-label::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #c8a27a;
+  box-shadow: 0 0 0 4px rgba(200, 162, 122, 0.18);
+}
+
+/* Radio spacing */
+.gender-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+/* Make radio buttons feel cleaner */
+mat-radio-button .mdc-form-field {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(123, 88, 70, 0.12);
+  transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+mat-radio-button .mdc-form-field:hover {
+  transform: translateY(-1px);
+  border-color: rgba(200, 162, 122, 0.45);
+  box-shadow: 0 10px 18px rgba(92, 64, 51, 0.07);
+}
+
+/* Slider tweaks */
+mat-slider {
+  width: 100%;
+}
+
+/* Datepicker icon */
+.mat-datepicker-toggle {
+  color: #8b6b5c;
+}
+
+/* ---------- Button ---------- */
+
+button[mat-raised-button] {
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px 16px !important;
+  border-radius: 16px !important;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  background: linear-gradient(135deg, #c8a27a 0%, #b48761 55%, #9c6b4d 100%) !important;
+  color: #fff !important;
+
+  box-shadow:
+    0 14px 26px rgba(92, 64, 51, 0.18),
+    0 2px 10px rgba(92, 64, 51, 0.10);
+
+  transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease;
+}
+
+button[mat-raised-button]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow:
+    0 18px 34px rgba(92, 64, 51, 0.22),
+    0 3px 14px rgba(92, 64, 51, 0.12);
+}
+
+button[mat-raised-button]:active {
+  transform: translateY(0px);
+}
+
+/* Disabled */
+button[mat-raised-button]:disabled {
+  background: linear-gradient(135deg, #e4d8cd 0%, #d7c8ba 100%) !important;
+  color: rgba(62, 42, 35, 0.45) !important;
+  box-shadow: none;
+}
+
+/* ---------- Submitted output ---------- */
+
+p {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(200, 162, 122, 0.30);
+
+  color: #3e2a23;
+  line-height: 1.7;
+  font-size: 14px;
+
+  box-shadow: 0 12px 22px rgba(92, 64, 51, 0.08);
+}
+
+/* Make the “You have entered” line pop a bit */
+p br:first-of-type {
+  margin-bottom: 8px;
+}
+
+/* Mobile friendliness */
+@media (max-width: 600px) {
+  .form-container {
+    margin: 18px auto;
+    padding: 22px;
+    border-radius: 18px;
+  }
+}
