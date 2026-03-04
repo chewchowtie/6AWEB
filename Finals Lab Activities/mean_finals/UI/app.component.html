@@ -1,0 +1,45 @@
+<div class="library-container">
+  <header>
+    <h1><i class="icon">❧</i> The Great Archive</h1>
+    <p class="ledger-stat">Total Collection Value: <span>{{ totalValue }} Gold</span></p>
+  </header>
+
+  <div class="search-inkwell">
+    <input #searchBar (input)="filterArchive(searchBar.value)" placeholder="Search the scrolls...">
+  </div>
+
+  <section class="book-press">
+    <input #titleInput placeholder="Title of the Work">
+    <input #descInput placeholder="Brief Description">
+    <input #priceInput type="number" placeholder="Value (Gold)">
+    <button class="btn-add" (click)="addBook(titleInput.value, descInput.value, priceInput.value)">
+      Inscribe Book
+    </button>
+  </section>
+
+  <div class="import-zone">
+  <label for="file-upload" class="btn-import">
+    <i class="icon">📜</i> Upload External Scroll (.json)
+  </label>
+  <input id="file-upload" type="file" (change)="onFileSelected($event)" accept=".json" style="display:none">
+</div>
+
+  <hr class="ornament">
+
+  <div class="shelf">
+    @for (book of filteredBooks; track book.id) {
+      <div class="book-spine">
+        <div class="book-details">
+          <span class="book-title">{{ book.title }}</span>
+          <span class="book-desc">{{ book.desc }}</span>
+          <span class="book-price">{{ book.price }} Gold</span>
+        </div>
+        <button class="btn-delete" (click)="deleteBook(book.id)">Burn Scroll</button>
+      </div>
+    } @empty {
+      <p class="empty-msg">No scrolls match your search...</p>
+    }
+  </div>
+</div>
+
+<router-outlet></router-outlet>
